@@ -1,45 +1,40 @@
 //
-//  TestViewController.m
+//  TestLogoViewController.m
 //  FQQRCodeScanDemo
 //
 //  Created by mac on 2018/6/20.
 //  Copyright © 2018年 mac. All rights reserved.
 //
 
-#import "TestViewController.h"
+#import "TestLogoViewController.h"
 #import "FQQRCodeScanViewController.h"
-#import "UIView+FQTextInputKeyBoard.h"
-#import "UIImage+FQExtension.h"
 
-@interface TestViewController ()<UIGestureRecognizerDelegate>
+@interface TestLogoViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *urlTextF;
 @property (weak, nonatomic) IBOutlet UIImageView *qrImageView;
 
 @end
 
-@implementation TestViewController
+@implementation TestLogoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     
+    UIBarButtonItem *creatButton = [[UIBarButtonItem alloc] initWithTitle:@"生成" style:UIBarButtonItemStyleDone target:self action:@selector(createImage)];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStyleDone target:self action:@selector(saveImage)];
 
+    self.navigationItem.rightBarButtonItems = @[saveButton ,creatButton];
 }
 
-
-- (IBAction)creatQRCodeClick:(id)sender {
-    if (_urlTextF.text == nil || _urlTextF.text.length == 0) {
-        _urlTextF.text = @"http://www.baidu.com";
-    }
-    
-//    UIImage *image = [FQQRCodeScanViewController createQRImageWithString:_urlTextF.text QRSize:CGSizeMake(250, 250) QRColor:[UIColor blackColor] bkColor:[UIColor colorWithRed:0.318 green:0.690 blue:0.839 alpha:1.00]];
-    //如果不需要设置背景色以及前景色，则使用下面代码  默认白色底黑色码
-    UIImage *image = [FQQRCodeScanViewController createQRImageWithString:_urlTextF.text QRSize:CGSizeMake(250, 250)];
-    [_qrImageView setImage: image];
-    
+- (void)createImage
+{
+    UIImage *logoImage = [UIImage imageNamed:@"icon_logo"];
+    UIImage *image = [FQQRCodeScanViewController createQRImageWithString:_urlTextF.text QRSize:CGSizeMake(250, 250) centerLogoImage:logoImage logoBorderColor:[UIColor whiteColor]];
+    [_qrImageView setImage:image];
 }
 
-- (IBAction)longPressGes:(id)sender {
+- (void)saveImage
+{
     if(_qrImageView.image) {
         UIImageWriteToSavedPhotosAlbum(_qrImageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), (__bridge void *)self);
     } else {

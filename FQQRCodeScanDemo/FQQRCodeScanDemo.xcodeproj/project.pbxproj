@@ -22,6 +22,7 @@
 		040EAFF620DA47680075253E /* TestOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040EAFF520DA47680075253E /* TestOtherViewController.m */; };
 		040EAFF920DA4F090075253E /* UIView+FQTextInputKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 040EAFF820DA4F090075253E /* UIView+FQTextInputKeyBoard.m */; };
 		040EAFFC20DA52A20075253E /* UIImage+FQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 040EAFFB20DA52A20075253E /* UIImage+FQExtension.m */; };
+		040EAFFF20DA59420075253E /* TestLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040EAFFE20DA59420075253E /* TestLogoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		040EAFF820DA4F090075253E /* UIView+FQTextInputKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FQTextInputKeyBoard.m"; sourceTree = "<group>"; };
 		040EAFFA20DA52A20075253E /* UIImage+FQExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+FQExtension.h"; sourceTree = "<group>"; };
 		040EAFFB20DA52A20075253E /* UIImage+FQExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FQExtension.m"; sourceTree = "<group>"; };
+		040EAFFD20DA59420075253E /* TestLogoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLogoViewController.h; sourceTree = "<group>"; };
+		040EAFFE20DA59420075253E /* TestLogoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLogoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				040EAFA820DA058E0075253E /* ViewController.m */,
 				040EAFF120DA47280075253E /* TestViewController.h */,
 				040EAFF220DA47280075253E /* TestViewController.m */,
+				040EAFFD20DA59420075253E /* TestLogoViewController.h */,
+				040EAFFE20DA59420075253E /* TestLogoViewController.m */,
 				040EAFF420DA47680075253E /* TestOtherViewController.h */,
 				040EAFF520DA47680075253E /* TestOtherViewController.m */,
 				040EAFAA20DA058E0075253E /* Main.storyboard */,
@@ -309,6 +314,7 @@
 				040EAFDC20DA06950075253E /* FQQRCodeScanViewController.m in Sources */,
 				040EAFA920DA058E0075253E /* ViewController.m in Sources */,
 				040EAFB420DA05900075253E /* main.m in Sources */,
+				040EAFFF20DA59420075253E /* TestLogoViewController.m in Sources */,
 				040EAFFC20DA52A20075253E /* UIImage+FQExtension.m in Sources */,
 				040EAFD920DA067E0075253E /* FQQRCodeScanView.m in Sources */,
 				040EAFF620DA47680075253E /* TestOtherViewController.m in Sources */,

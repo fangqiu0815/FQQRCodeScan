@@ -10,6 +10,7 @@
 #import "FQQRCodeScanViewController.h"
 #import "TestViewController.h"
 #import "TestOtherViewController.h"
+#import "TestLogoViewController.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -25,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.dataArray = @[@"扫一扫", @"扫二维码", @"扫条形码" , @"生成二维码", @"生成条形码"];
+    self.dataArray = @[@"扫一扫", @"扫二维码", @"扫条形码" , @"生成二维码",@"生成带logo二维码", @"生成条形码"];
 
 }
 
@@ -40,16 +41,15 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        
     }
     cell.textLabel.text = self.dataArray[indexPath.row];
+    
     return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.row == 0) {
         FQQRCodeScanViewController *scanVc = [[FQQRCodeScanViewController alloc] initWithQrType:FQQRCodeScanTypeAll onFinish:^(NSString *result, NSError *error) {
@@ -84,7 +84,10 @@
     } else if (indexPath.row == 3) {
         TestViewController *drawQrVC = [self.storyboard instantiateViewControllerWithIdentifier:@"test"];
         [self.navigationController pushViewController:drawQrVC animated:YES];
-    } else {
+    } else if (indexPath.row == 4) {
+        TestLogoViewController *drawQrVC = [self.storyboard instantiateViewControllerWithIdentifier:@"testLogo"];
+        [self.navigationController pushViewController:drawQrVC animated:YES];
+    }else {
         TestOtherViewController *drawBarVC = [self.storyboard instantiateViewControllerWithIdentifier:@"testOther"];
         [self.navigationController pushViewController:drawBarVC animated:YES];
     }
